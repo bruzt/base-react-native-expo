@@ -1,5 +1,5 @@
 
-export const setMessage = (message) => {
+export function setMessage(message){
     
     return {
         type: 'SET_MESSAGE',
