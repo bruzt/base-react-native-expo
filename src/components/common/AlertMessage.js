@@ -25,21 +25,3 @@ export default function AlertMessage(){
         </React.Fragment>
     );
 }
-
-////////////////////////////////
-
-/*
-const mapStateToProps = (state) => {
-
-    return {
-        message: state.message
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-
-    return bindActionCreators({ clearMessage }, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(AlertMessage);
-*/
