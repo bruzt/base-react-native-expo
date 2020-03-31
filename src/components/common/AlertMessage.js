@@ -1,24 +1,24 @@
 import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { View, Alert } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
+import { Alert } from 'react-native';
 
 import { setMessage as clearMessage } from '../../redux/actions/messageActions';
 
-function AlertMessage(props){
+export default function AlertMessage(){
 
+    const message = useSelector( (state) => state.message);
+    const dispatch = useDispatch();
 
     function alert(){
         
-        if(props.message.text.trim()){
+        if(message.text.trim()){
 
-            Alert.alert(props.message.title || 'Mensagem', props.message.text);
+            Alert.alert(message.title || 'Mensagem', message.text);
 
-            props.clearMessage({ title: '', text: '' });
+            dispatch(clearMessage({ title: '', text: '' }));
         }
     }
 
-   
     return (
         <React.Fragment>
             {alert()}
@@ -28,6 +28,7 @@ function AlertMessage(props){
 
 ////////////////////////////////
 
+/*
 const mapStateToProps = (state) => {
 
     return {
@@ -41,3 +42,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlertMessage);
+*/

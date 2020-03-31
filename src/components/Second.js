@@ -22,7 +22,6 @@ export default function Second(){
     );
 }
 
-
 const Container = styled.View`
     flex: 1;
     align-items: center;
@@ -41,10 +40,3 @@ const AlertButton = styled.TouchableOpacity`
 const Text = styled.Text`
     font-size: 20px;
 `;
-
-///////////////////////////
-/*
-const mapDispatchToProps = (dispatch) => bindActionCreators({ setMessage }, dispatch);
-
-export default connect(null, mapDispatchToProps)(second);
-*/
